@@ -1,0 +1,27 @@
+$bg-color:#223843;
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+@mixin box_shadow() {
+  -webkit-box-shadow: 1px 1px 1px -1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 1px -1px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 1px -1px rgba(21, 2, 22, 0.5);
+}

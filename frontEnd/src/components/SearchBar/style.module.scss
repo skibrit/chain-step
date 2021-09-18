@@ -1,0 +1,22 @@
+.searchBarWrapper{
+  margin-bottom: 20px;
+
+  .searchBarTitle {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: white;
+  }
+
+  .searchBarInputWrapper{
+    display: flex;
+    align-items: center;
+    .leftBox{
+      flex-grow: 1;
+    }
+    .rightBox{
+      width: auto;
+      margin-left: 0.8rem;
+    }
+  }
+}
