@@ -11,7 +11,9 @@
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
     "@types/react-redux-toastr": "^7.6.1",
+    "axios": "^0.21.4",
     "bootstrap": "^5.1.1",
+    "graphql": "^15.5.3",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.3",
     "react-dom": "^17.0.2",
@@ -37,6 +39,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "http://127.0.0.1:5000",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -48,6 +51,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://127.0.0.1:5000"
+  }
 }

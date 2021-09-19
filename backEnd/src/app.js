@@ -1,15 +1,15 @@
 import "@babel/polyfill";
 import express from "express";
-import { middleware as graphbrainz } from 'graphbrainz';
+import { middleware as graphbrainz } from "graphbrainz";
+import cors from "cors";
 const app = express();
 
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ extended: false }));
-
+app.use(cors());
 
 //routes
-app.use('/graphbrainz', graphbrainz());
-
+app.use("/graphbrainz", graphbrainz());
 
 app.use("/", (req, res) => {
   res.status(404).json({
@@ -17,7 +17,6 @@ app.use("/", (req, res) => {
     msg: "Welcome to the ChainStep APi",
   });
 });
-
 
 app.use(function (err, req, res, next) {
   res.status(500).json({

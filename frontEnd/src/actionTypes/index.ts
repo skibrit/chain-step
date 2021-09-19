@@ -1,3 +1,6 @@
-export default {
-
-};
+export enum ActionType {
+  SEARCH_ARTIST_SUCCESS = "SEARCH_ARTIST_SUCCESS",
+  SEARCH_ARTIST_ERROR = "SEARCH_ARTIST_ERROR",
+  UPDATE_ARTIST_PAYLOAD = "UPDATE_ARTIST_PAYLOAD",
+}
+export default ActionType;

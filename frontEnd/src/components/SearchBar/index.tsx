@@ -2,14 +2,24 @@ import React, { useState } from "react";
 import Classes from "./style.module.scss";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { searchWork } from "../../actions/task";
 
 const SearchBar: React.FC = () => {
-  const [fieldValue, setFieldValue] = useState("");
+  const [fieldValue, setFieldValue] = useState("Justin Timberlake");
   const [isLoading, toggleLoader] = useState(false);
   const dispatch = useDispatch();
 
   const onSearchHandler = async () => {
-
+    try {
+      if (isLoading) return;
+      if (!fieldValue.trim()) return;
+      toggleLoader(true);
+      const result = await dispatch(searchWork(fieldValue, 5));
+      toggleLoader(false);
+    } catch (e) {
+      toggleLoader(false);
+      console.log(e);
+    }
   };
 
   return (
