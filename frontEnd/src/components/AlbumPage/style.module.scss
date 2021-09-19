@@ -1,3 +1,29 @@
-.albumPageWrapper{
+@import "../../assets/scss/custom_variables";
 
+.albumPageWrapper{
+    .backBtnWrapper{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        .backBtn{
+            color: whitesmoke;
+            background-color: $btn-color;
+            width: auto;
+            padding: 6px 10px;
+            &:hover{
+                background-color: darken($btn-color,5%);
+            }
+        }
+    }
+
+    .albumBody{
+        margin-top: 50px;
+        color: whitesmoke;
+        .albumHeader{
+            margin-bottom: 30px;
+            span{
+                color: $highlightColor;
+            }
+        }
+    }
 }

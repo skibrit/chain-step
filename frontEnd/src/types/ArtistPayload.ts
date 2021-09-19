@@ -1,6 +1,6 @@
 import ActionType from "../actionTypes";
 
-export interface SuccessRequest {
+export interface SuccessArtistRequest {
   type: ActionType.SEARCH_ARTIST_SUCCESS;
   payload: {
     totalCount: number;
@@ -9,8 +9,29 @@ export interface SuccessRequest {
   };
 }
 
-export interface FailedRequest {
+export interface SuccessAlbumRequest {
+  type: ActionType.GET_ALBUM_DETAIL_SUCCESS;
+  payload: AlbumNode;
+}
+
+export interface GetMoreArtistPayloadSuccess {
+  type: ActionType.GET_MORE_ARTIST_PAYLOAD_SUCCESS;
+  payload: {
+    pageInfo: PageInfo;
+    nodes: ArtistNode[];
+  };
+}
+
+export interface ArtistRequestFailed {
   type: ActionType.SEARCH_ARTIST_ERROR;
+}
+
+export interface AlbumRequestFailed {
+  type: ActionType.GET_ALBUM_DETAIL_FAILED;
+}
+
+export interface GetMoreArtistPayloadFailed {
+  type: ActionType.GET_MORE_ARTIST_PAYLOAD_ERROR;
 }
 
 export interface PageInfo {
@@ -32,6 +53,8 @@ export interface AlbumNode {
   id: string;
   mbid: string;
   title: string;
+  primaryType: string;
+  firstReleaseDate: string;
   coverArtArchive: {
     front: string | null;
     back: string | null;
@@ -43,8 +66,14 @@ export interface AlbumNode {
   };
   relationships: {
     releaseGroups: {
-      edges: SongNode[];
+      edges: SongNodeEdge[];
     };
+  };
+}
+
+export interface SongNodeEdge {
+  node: {
+    target: SongNode;
   };
 }
 
@@ -55,6 +84,12 @@ export interface SongNode {
   firstReleaseDate: string;
 }
 
-type Action = SuccessRequest | FailedRequest;
+type Action =
+  | SuccessArtistRequest
+  | SuccessAlbumRequest
+  | AlbumRequestFailed
+  | ArtistRequestFailed
+  | GetMoreArtistPayloadSuccess
+  | GetMoreArtistPayloadFailed;
 
 export default Action;

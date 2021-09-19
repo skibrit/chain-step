@@ -1,0 +1,34 @@
+@import "../../../assets/scss/custom_variables";
+
+.songItem {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px ridge rgba(255,255,255,0.2);
+  text-align: left;
+  padding: 2rem;
+  cursor: default;
+  background-color: #172A3A;
+  color: whitesmoke;
+  .leftBox{
+    margin-right: 15px;
+  }
+  .centerBox{
+    flex-grow: 1;
+  }
+  .songTitle{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  .songInfo{
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .btnWrapper{
+    width: 82px;
+    height: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

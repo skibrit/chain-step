@@ -23,7 +23,7 @@
     justify-content: center;
     align-items: center;
       .viewBtn{
-        background-color: #ed5d06;
+        background-color: $btn-color;
         color: whitesmoke;
         padding: 5px 12px;
         @include border-radius(2px);
@@ -31,7 +31,7 @@
         font-size: 16px;
         font-weight: bold;
         &:hover{
-          background-color: darken(#ed5d06,5%);
+          background-color: $btn-color;
         }
       }
   }
