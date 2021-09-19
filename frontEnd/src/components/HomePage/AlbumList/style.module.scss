@@ -1,0 +1,57 @@
+@import "../../../assets/scss/custom_variables";
+.albumListWrapper{
+  background-color: gray;
+}
+.albumItem {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  text-align: left;
+  padding: 1rem 1.2rem 1rem 2rem;
+  cursor: default;
+  background-color: #172A3A;
+  color: whitesmoke;
+  .leftBox{
+    margin-right: 15px;
+  }
+  .centerBox{
+    flex-grow: 1;
+    margin-top: -5px;
+  }
+  .rightBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      .viewBtn{
+        background-color: #ed5d06;
+        color: whitesmoke;
+        padding: 5px 12px;
+        @include border-radius(2px);
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        &:hover{
+          background-color: darken(#ed5d06,5%);
+        }
+      }
+  }
+  .albumTitle{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  .albumInfo{
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .albumCoverWrapper{
+    width: 82px;
+    height: 82px;
+    border: 2px ridge whitesmoke;
+    .albumCover{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Classes from "./style.module.scss";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { searchWork } from "../../actions/task";
+import { searchWork } from "../../../actions/task";
 
 const SearchBar: React.FC = () => {
   const [fieldValue, setFieldValue] = useState("Justin Timberlake");

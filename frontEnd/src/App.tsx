@@ -1,14 +1,22 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import SearchBar from "./components/SearchBar";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import AlbumPage from "./components/AlbumPage";
 import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <Container>
-        <SearchBar />
-      </Container>
+      <Router>
+        <Switch>
+          <Route path="/album/:id">
+            <AlbumPage />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

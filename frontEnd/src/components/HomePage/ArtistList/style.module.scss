@@ -1,0 +1,80 @@
+.taskItemHeaderWrapper{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.8rem 0;
+  cursor: default;
+
+  .centerHeaderBox{
+    flex-grow: 1;
+    margin-right: 0.8rem;
+    text-align: left;
+  }
+
+  .headerTitle{
+    font-size: 18px;
+  }
+
+  .headerFooter{
+    font-size: 14px;
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .rightHeaderBox{
+    width: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .accordionBtn{
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-left: auto;
+      content: "";
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 1.25rem;
+      transition: transform .2s ease-in-out;
+      border: none;
+    }
+
+    .taskStatusText{
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: rgba(0,0,0,.6);
+      margin-right: 0.7rem;
+    }
+  }
+}
+
+
+
+.itemFooterWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #eff0f1;
+  .leftBox{
+    flex-grow: 1;
+  }
+  .inputField{
+    border: none;
+    height: 50px;
+    outline: none;
+    padding-left: 1.2rem;
+    background-color: #eff0f1;
+    &:focus{
+      box-shadow: inset 0 -1px 0 #ddd;
+    }
+  }
+  .submitBtn{
+    border: 1px solid rgba(0,0,0,.3);
+  }
+  .rightBox{
+    width: auto;
+    padding-right: 1rem;
+  }
+}
