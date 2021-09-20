@@ -1,6 +1,6 @@
 export const decodeErrorMessage = (errors) => {
-  if (Array.isArray(errors) && errors.length > 0) {
-    return errors.map((err) => err.msg).join(" \n ");
+  if (errors?.request) {
+    return errors.request.responseText;
   }
   return "Something went wrong. Please try again later";
 };

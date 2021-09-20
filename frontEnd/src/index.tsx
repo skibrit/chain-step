@@ -7,12 +7,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/react-redux-toastr.min.css";
 import "./index.scss";
 import App from "./App";
+import ErrorBoundary from "./components/Layouts/ErrorPage/Error500";
 const store = configStore({});
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
       <ReduxToastr
         timeOut={5000}
         newestOnTop={false}

@@ -5,7 +5,7 @@ import Classes from "./style.module.scss";
 interface ComponentProps {
   animation: "grow" | "border";
   variant: "primary" | "info" | "danger" | "success" | "warning";
-  size: "sm" | undefined;
+  size?: "sm" | undefined;
 }
 
 const SpinnerLoader: React.FC<ComponentProps> = (props: ComponentProps) => {

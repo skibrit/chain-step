@@ -1,0 +1,18 @@
+@import "../../../assets/scss/custom_variables";
+
+.footerWrapper {
+  margin-top: 30px;
+  .loadBtnWrapper{
+    display: flex;
+    justify-content: center;
+  }
+  .loadMoreBtn{
+    background-color: $btn-color;
+    padding: 8px 10px;
+    color: $font-color;
+    cursor: pointer;
+    &:hover{
+      background-color: darken($btn-color,10%);
+    }
+  }
+}

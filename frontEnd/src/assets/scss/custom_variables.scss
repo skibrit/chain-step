@@ -1,4 +1,7 @@
 $bg-color:#223843;
+$btn-color: #ed5d06;
+$highlightColor:#f38124;
+$font-color:whitesmoke;
 
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
@@ -25,3 +28,72 @@ $bg-color:#223843;
   -moz-box-shadow: 1px 1px 1px -1px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 1px 1px -1px rgba(21, 2, 22, 0.5);
 }
+
+@mixin breakpoint($point) {
+
+  @if $point == min2400 {
+    @media (min-width: 2400px) {
+      @content ;
+    }
+  }
+
+  @if $point == min2000 {
+    @media (min-width: 2000px) {
+      @content ;
+    }
+  }
+
+  @if $point == largedesktop1840 {
+    @media (max-width: 1840px) {
+      @content ;
+    }
+  }
+
+  @if $point == largedesktop1700 {
+    @media (max-width: 1700px) {
+      @content ;
+    }
+  }
+
+  @if $point == largedesktop1440 {
+    @media (max-width: 1440px) {
+      @content ;
+    }
+  }
+  @if $point == desktop {
+    @media (max-width: 1366px) {
+      @content ;
+    }
+  }
+
+  @if $point == below1299 {
+    @media (max-width: 1299px) {
+      @content ;
+    }
+  } @else if $point == belowdesktop {
+    @media (max-width: 1199px) {
+      @content ;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 991px) {
+      @content ;
+    }
+  } @else if $point == mobile {
+    @media (max-width: 767px) {
+      @content ;
+    }
+
+  } @else if $point == mobilemini {
+    @media (max-width: 575px) {
+      @content ;
+    }
+
+  } @else if $point == mobilemicro {
+    @media (max-width: 375px) {
+      @content ;
+    }
+
+  }
+}
+
+
