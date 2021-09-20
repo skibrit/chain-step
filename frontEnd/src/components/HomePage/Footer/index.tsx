@@ -25,15 +25,17 @@ const Footer = () => {
   };
   return (
     <div className={Classes.footerWrapper}>
-      <div className={Classes.loadBtnWrapper}>
-        {isLoading ? (
-          <div className={Classes.loadMoreBtn}>Processing</div>
-        ) : (
-          <div className={Classes.loadMoreBtn} onClick={getMoreArtistHandler}>
-            Load More
-          </div>
-        )}
-      </div>
+      {pageInfo && (
+        <div className={Classes.loadBtnWrapper}>
+          {isLoading ? (
+            <div className={Classes.loadMoreBtn}>Processing</div>
+          ) : (
+            <div className={Classes.loadMoreBtn} onClick={getMoreArtistHandler}>
+              Load More
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

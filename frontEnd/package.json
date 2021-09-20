@@ -18,7 +18,7 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "^17.0.2",
-    "react-fb-image-grid": "^0.1.5",
+    "react-facebook-photo-grid": "^1.0.10",
     "react-lazy-load-image-component": "^1.5.1",
     "react-redux": "^7.2.5",
     "react-redux-toastr": "^7.6.5",
@@ -33,9 +33,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npx cross-env GENERATE_SOURCEMAP=false REACT_APP_ENV=production react-scripts build && npm run compress && npm run compressgZip",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "compress": "npx gzipper compress --brotli ./build",
+    "compressgZip": "npx gzipper compress ./build"
   },
   "eslintConfig": {
     "extends": [

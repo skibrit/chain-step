@@ -5,13 +5,13 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "watch": "cross-env NODE_ENV=development nodemon --config src/config/nodemon.config.json",
-    "babel:start": "babel-node ./src/server.js"
+    "start": "cross-env NODE_ENV=production node ./src/server.js",
+    "start:dev": "node ./src/server.js",
+    "watch": "cross-env NODE_ENV=development nodemon --config src/config/nodemon.config.json"
   },
   "author": "Saidul Amin",
   "license": "MIT",
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-static-gzip": "^2.1.1",

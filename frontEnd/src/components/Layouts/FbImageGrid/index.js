@@ -1,8 +1,8 @@
 import React from "react";
-import FbImageLibrary from "react-fb-image-grid";
+import Photogrid from "react-facebook-photo-grid";
 
 const ImageGrid = ({ images }) => {
-  return <FbImageLibrary images={images.filter(Boolean)} />;
+  return <Photogrid images={images.filter(Boolean)} />;
 };
 
 export default ImageGrid;

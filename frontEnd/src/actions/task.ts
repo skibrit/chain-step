@@ -1,6 +1,7 @@
 import { SEARCH_ARTIST, GET_ALBUM } from "../queries";
 import { postRequest } from "../utils/api";
 import { decodeErrorMessage } from "../utils/error";
+import { showErrorAlert } from "../utils/alert";
 import ActionType from "../actionTypes";
 import { Dispatch } from "redux";
 import Action from "../types/ArtistPayload";
@@ -13,6 +14,7 @@ export const searchWork =
         variables: {
           searchQuery: keyword,
           itemCount: pageItem,
+          after: "",
         },
       });
       const data = result.data.data.search.artists;
@@ -20,12 +22,11 @@ export const searchWork =
         type: ActionType.SEARCH_ARTIST_SUCCESS,
         payload: { ...data },
       });
-    } catch (e) {
+    } catch (e: any) {
       dispatch({
         type: ActionType.SEARCH_ARTIST_ERROR,
       });
-      console.log(e);
-      console.log(decodeErrorMessage(e));
+      showErrorAlert(e.message);
     }
   };
 
@@ -46,19 +47,18 @@ export const getMoreArtist =
         type: ActionType.GET_MORE_ARTIST_PAYLOAD_SUCCESS,
         payload: { ...data },
       });
-    } catch (e) {
+    } catch (e: any) {
       dispatch({
         type: ActionType.GET_MORE_ARTIST_PAYLOAD_ERROR,
       });
-      console.log(e);
-      console.log(decodeErrorMessage(e));
+      showErrorAlert(e.message);
     }
   };
 
 export const getAlbum =
   (albumId: string) => async (dispatch: Dispatch<Action>) => {
     try {
-      const result = await postRequest(" http://localhost:5000/graphbrainz", {
+      const result = await postRequest("/graphbrainz", {
         query: GET_ALBUM,
         variables: {
           albumId,
@@ -69,11 +69,17 @@ export const getAlbum =
         type: ActionType.GET_ALBUM_DETAIL_SUCCESS,
         payload: data,
       });
-    } catch (e) {
+    } catch (e: any) {
       dispatch({
         type: ActionType.GET_ALBUM_DETAIL_FAILED,
       });
-      console.log(e);
-      console.log(decodeErrorMessage(e));
+      showErrorAlert(e.message);
     }
   };
+
+export const resetAlbumPage = () => async (dispatch: Dispatch<Action>) => {
+  dispatch({
+    type: ActionType.GET_ALBUM_DETAIL_FAILED,
+    payload: null,
+  });
+};

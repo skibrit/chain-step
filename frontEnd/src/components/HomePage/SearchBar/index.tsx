@@ -3,10 +3,10 @@ import Classes from "./style.module.scss";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { searchWork } from "../../../actions/task";
-import { setSessionItem } from "../../../utils/store";
+import { setSessionItem, getSessionItem } from "../../../utils/store";
 
 const SearchBar: React.FC = () => {
-  const [fieldValue, setFieldValue] = useState("Justin Bieber");
+  const [fieldValue, setFieldValue] = useState(getSessionItem("keyword") || "");
   const [isLoading, toggleLoader] = useState(false);
   const dispatch = useDispatch();
 

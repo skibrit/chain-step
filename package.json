@@ -1,0 +1,15 @@
+{
+  "name": "chainstep-monorepo",
+  "version": "1.0.0",
+  "description": "A monorepo for chainstep app",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "npm run build-frontEnd && npm run build-backEnd",
+    "start": "cd backEnd && npm start",
+    "build-frontEnd": "cd frontEnd && npm install && npm run build",
+    "build-backEnd": "cd backEnd && npm install"
+  },
+  "author": "Saidul Amin",
+  "license": "ISC",
+  "dependencies": {}
+}

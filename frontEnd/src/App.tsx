@@ -5,6 +5,9 @@ import "./App.scss";
 
 const HomePage = React.lazy(() => import("./components/HomePage"));
 const AlbumPage = React.lazy(() => import("./components/AlbumPage"));
+const Error404 = React.lazy(
+  () => import("./components/Layouts/ErrorPage/Error404")
+);
 
 function App() {
   return (
@@ -12,8 +15,9 @@ function App() {
       <div className="App">
         <Router>
           <Switch>
-            <Route path="/album/:id" component={AlbumPage} />
-            <Route path="/" component={HomePage} />
+            <Route exact path="/album/:id" component={AlbumPage} />
+            <Route exact path="/" component={HomePage} />
+            <Route component={Error404} />
           </Switch>
         </Router>
       </div>

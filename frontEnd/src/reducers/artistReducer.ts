@@ -1,6 +1,10 @@
 import ActionType from "../actionTypes";
 import Action, { ArtistNode, PageInfo } from "../types/ArtistPayload";
-import { setSessionItem, getSessionItem } from "../utils/store";
+import {
+  setSessionItem,
+  removeSessionItem,
+  getSessionItem,
+} from "../utils/store";
 
 interface stateInterface {
   resultList: ArtistNode[];
@@ -37,7 +41,7 @@ const artistReducer = (
         pageInfo: payload.pageInfo,
         isFetching: false,
       };
-      setSessionItem("selectedAccordion", "");
+      removeSessionItem("selectedAccordion");
       setSessionItem("artists", JSON.stringify(newState));
       return newState;
     }
@@ -49,11 +53,13 @@ const artistReducer = (
         pageInfo: payload.pageInfo,
         isFetching: false,
       };
-      setSessionItem("selectedAccordion", "");
+      removeSessionItem("selectedAccordion");
       setSessionItem("artists", JSON.stringify(newState));
       return newState;
     }
     case ActionType.SEARCH_ARTIST_ERROR:
+      removeSessionItem("selectedAccordion");
+      removeSessionItem("artists");
       return {
         resultList: [],
         totalCount: 0,

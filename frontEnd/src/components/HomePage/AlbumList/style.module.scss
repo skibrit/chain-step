@@ -7,7 +7,7 @@
   justify-content: flex-start;
   border-bottom: 1px solid rgba(255,255,255,0.2);
   text-align: left;
-  padding: 1rem 1.2rem 1rem 2rem;
+  padding: 1rem 1.2rem;
   cursor: default;
   background-color: #172A3A;
   color: whitesmoke;
@@ -28,7 +28,7 @@
         padding: 5px 12px;
         @include border-radius(2px);
         cursor: pointer;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
         &:hover{
           background-color: $btn-color;

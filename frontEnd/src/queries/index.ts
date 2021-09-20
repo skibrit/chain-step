@@ -25,20 +25,6 @@ export const SEARCH_ARTIST = `
                                        image
                                    }
                                }
-                               relationships {
-                                  releaseGroups {
-                                    edges {
-                                      node {
-                                        target {
-                                          ... on ReleaseGroup {
-                                            title
-                                            firstReleaseDate
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                               }
                            }
                        }
                    }

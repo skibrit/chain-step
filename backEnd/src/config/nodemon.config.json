@@ -1,5 +1,5 @@
 {
-  "exec": "npm run babel:start",
+  "exec": "npm start:dev",
   "verbose": true,
   "ignore": ["node_modules","dist"],
   "signal": "SIGINT"
