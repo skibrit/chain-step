@@ -26,3 +26,8 @@ If will send a request to the **musicBrainz** api and show the result if found.
 If an artist contains a list of albums then those can be viewed by clicking on the albums button.
 
 There a separate page for the albums to view the cover arts & album songs with a dummy play/pause button. Couldn't implement the real song play as there is no media url provided by the musicBrainz api.
+
+App Live on : https://app-chainstep.herokuapp.com/
+
+Demo : https://streamable.com/3z3kb5
+
