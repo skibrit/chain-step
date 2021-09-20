@@ -1,4 +1,4 @@
-# TODO APP
+# Music APP
 
 ## Technologies Used
 
