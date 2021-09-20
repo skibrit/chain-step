@@ -21,11 +21,11 @@
 ## App Functionalities
 
 The app contains a search bar to search **artist/band/group**.
-If will send a request to the **musicBrainz** api and show the result if found.
+It will send a request to the **musicBrainz** api and show the result if found.
 
 If an artist contains a list of albums then those can be viewed by clicking on the albums button.
 
-There a separate page for the albums to view the cover arts & album songs with a dummy play/pause button. Couldn't implement the real song play as there is no media url provided by the musicBrainz api.
+There a separate page for the albums to view the cover arts & album songs with a dummy play/pause button. Couldn't play the song in the browser as there is no media url provided by the musicBrainz api.
 
 App Live on : https://app-chainstep.herokuapp.com/
 
