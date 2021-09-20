@@ -5,9 +5,10 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node ./src/server.js",
+    "start": "npx cross-env NODE_ENV=production node ./src/server.js",
     "start:dev": "node ./src/server.js",
-    "watch": "cross-env NODE_ENV=development nodemon --config src/config/nodemon.config.json"
+    "watch": "cross-env NODE_ENV=development nodemon --config src/config/nodemon.config.json",
+    "pm2": "npx pm2 start src/config/pm2.process.config.cjs --env production"
   },
   "author": "Saidul Amin",
   "license": "MIT",

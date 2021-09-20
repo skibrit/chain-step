@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "ChainStep-APP",
-      script: "dist/server.js",
+      script: "src/server.js",
       env: {
         NODE_ENV: "development",
       },
